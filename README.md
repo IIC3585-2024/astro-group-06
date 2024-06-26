@@ -1,54 +1,26 @@
-# Astro Starter Kit: Basics
+# Cuevana 6 - Astro
 
-```sh
-npm create astro@latest -- --template basics
-```
+Our Astro aplication manage a platform with diferent series recomendations and with users. In it you can see all the series that have been uploaded and rate them. Also, it allows you to upload new series to recommend, and you can filter by category, streaming service, rating, etc. To use the app you have to create a user or login with an already created one. It is developed using SSR so it render very quickly and it's optimized to be used in mobile devices.  
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Web
+Available in: [https://wasm.cparedesr.com/astro](https://wasm.cparedesr.com/astro)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Local
+Run `npm install` and `npm run dev`
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Components Features
+- See list of series: Home page with all the series uploaded to the platform, with their respective name, image, category and rating.
+- Details of a series: When clicking on a series, all the information is displayed, with description, seasons, chapters, rating, etc.
+- Rate series: In the details view it is possible to rate the series, from 1 to 5 stars.
+- Upload/Create series: Form to create a new series in the database, filling in all the necessary values. This way every user can upload a series to recommend it to the community.
+- Filters: It is possible to search for specific series by filters such as, categories, streaming services, rating, seasons, etc.
+- Login/SignUp: The application manages user authentication to enter the page. You can register with a simple form with username and password and then log in with those credentials.
 
-## 🚀 Project Structure
+## Stack
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Astro
+- React
+- JavaScript
+- TailwindCSS
+- DaysiUI
+- SupaBase
