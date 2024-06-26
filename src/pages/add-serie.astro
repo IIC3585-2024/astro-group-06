@@ -1,0 +1,13 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { renderToStaticMarkup } from 'react-dom/server';
+import SeriesForm from '../components/SeriesForm';
+
+// Render the React component to static markup
+// const SeriesFormHTML = renderToStaticMarkup(<SeriesForm />);
+---
+
+<Layout title="Add New Serie">
+    <!-- <div dangerouslySetInnerHTML={{ __html: SeriesFormHTML }}></div> -->
+    <SeriesForm />
+</Layout>

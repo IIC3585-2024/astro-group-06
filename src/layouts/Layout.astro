@@ -3,7 +3,10 @@ interface Props {
 	title: string;
 }
 
+import Navbar from '../components/Navbar.jsx'
 const { title } = Astro.props;
+const { cookies, redirect } = Astro;
+export const prerender = true;
 ---
 
 <!doctype html>
@@ -16,7 +19,9 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="pt-5">
+	<body>
+		<Navbar cookies={cookies} redirect={redirect}/>
+		</div>
 		<slot />
 	</body>
 </html>
