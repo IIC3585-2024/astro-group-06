@@ -64,7 +64,7 @@ const SeriesCard: React.FC<SeriesCardProps> = ({ series }) => {
     const streamingServiceDisplayName = STREAMING_SERVICES_DISPLAY_NAMES[series.streaming_service.toLowerCase()];
 
     return (
-    <div className="card bg-base-100 w-56 shadow-xl">
+    <a href={`/series/${series.id}`} className="card bg-base-100 w-64 md:w-56 shadow-xl">
         <figure>
             <img src={series.image_url} alt={series.description} className="w-full h-72 object-fill" />
             <div className={streamingServiceBadgeClasses}> {streamingServiceDisplayName} </div>
@@ -86,7 +86,7 @@ const SeriesCard: React.FC<SeriesCardProps> = ({ series }) => {
                 { ratingStars }
             </div>
         </div>
-    </div>
+    </a>
     );
 };
 

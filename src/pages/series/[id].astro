@@ -1,0 +1,33 @@
+---
+import { supabase } from '../../lib/supabase';
+import SeriesDetails from '../../components/SeriesDetails';
+import Layout from '../../layouts/Layout.astro';
+
+export async function load({id}) {
+    console.log("ID", id);
+    const { data: series } = await supabase.from('series').select().eq('id', id).single()
+    const { data: reviews } = await supabase.from('reviews')
+                                        .select(`
+                                            comment,
+                                            rating,
+                                            user_email,
+                                            created_at
+                                        `)
+    return {
+            series,
+            reviews
+        }
+
+}
+
+const { id } = Astro.params;
+const { series, reviews } = await load({id});
+---
+<Layout title="Cuevana6">
+    <div class='w-full flex flex-col items-center'>
+        <SeriesDetails
+            series={series}
+            reviews={reviews}
+        />
+    </div>
+</Layout>

@@ -21,7 +21,7 @@ interface SeriesListProps {
 const SeriesList = ({series = []}: SeriesListProps) => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center">
         {series.map((seriesItem) => (
           <SeriesCard key={seriesItem.id} series={seriesItem} />
         ))}

@@ -12,7 +12,7 @@ const Navbar = ({ cookies, redirect }) => {
         </>
       ) : (
         <>
-          <a href="/add-serie">Add New Series</a>
+          <a href="/series/create">Add New Series</a>
           <form action="/api/auth/signout">
             <button type="submit">Logout</button>
           </form>
