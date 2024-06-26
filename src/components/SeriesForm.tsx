@@ -1,6 +1,6 @@
 // src/components/SeriesForm.tsx
 import React, { useState } from 'react';
-import { supabase } from "../lib/supabase";
+import { createBrowserSupabaseClient } from "../lib/supabase-ssr";
 
 const STREAMING_SERVICES = [
     { value: 'netflix', label: 'Netflix' },
@@ -30,12 +30,14 @@ const CATEGORIES = [
 const SeriesForm: React.FC = () => {
     const [name, setName] = useState('');
     const [streamingService, setStreamingService] = useState('');
-    const [seasons, setSeasons] = useState('');
-    const [episodesPerSeason, setEpisodesPerSeason] = useState('');
+    const [seasons, setSeasons] = useState(0);
+    const [episodesPerSeason, setEpisodesPerSeason] = useState(0);
     const [longDescription, setLongDescription] = useState('');
     const [categories, setCategories] = useState<string[]>([]);
     const [imageUrl, setImageUrl] = useState('');
     const [averageRating, setAverageRating] = useState('');
+
+    const supabase = createBrowserSupabaseClient();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -45,8 +47,8 @@ const SeriesForm: React.FC = () => {
                 name,
                 long_description: longDescription,
                 streaming_service: streamingService,
-                seasons: parseInt(seasons),
-                episodes_per_season: parseInt(episodesPerSeason),
+                seasons: seasons,
+                episodes_per_season: episodesPerSeason,
                 categories,
                 average_rating: parseFloat(averageRating),
                 image_url: imageUrl,
@@ -144,7 +146,7 @@ const SeriesForm: React.FC = () => {
                     required
                     className="input input-bordered w-full"
                 />
-                <button type="submit" className="btn btn-primary w-full">Add Series</button>
+                <button type="button" className="btn btn-primary w-full" onClick={handleSubmit}> Add Series </button>
             </form>
         </div>
     );
