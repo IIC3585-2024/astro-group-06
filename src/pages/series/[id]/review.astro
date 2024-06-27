@@ -1,0 +1,11 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import AddReviewForm from '../../../components/AddReviewForm';
+
+const { id } = Astro.params;
+const seriesId = Number(id);
+---
+
+<Layout title="Add New Serie">
+    <div><AddReviewForm seriesId={seriesId} client:load /></div>
+</Layout>
